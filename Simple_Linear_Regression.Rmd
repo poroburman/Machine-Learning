@@ -1,0 +1,80 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+**This script is meant to use Linear Regression model**
+
+**The dataset consists of 30 rows and 2 columns; where each row comprises of an** **employee and the 2 columns comprise of Years of Experience and Salary of each** **employee. The goal of this script is too use a Simple Linear Regression model**
+**to check and see if the independent variable (Years of Experience) for each**
+**employee can be used to predict the dependent variable (Salary)** 
+
+**1. Set working directory, import the libraries and the dataset**
+```{r}
+dataset = read.csv("Salary_data.csv")
+```     
+
+**2. Split the dataset into  training and test set**         
+**load caTools library**    
+```{r}
+library(caTools)
+```     
+**3. set seed**    
+```{r}
+set.seed(123)
+```     
+
+**4. split the dependent variable where 2/3 goes to training set and rest to test**
+```{r}
+split = sample.split(dataset$Salary, SplitRatio = 2/3)
+```    
+
+**5. use the split to make training and test sets**    
+```{r}
+training_set = subset(dataset, split == TRUE)
+test_set = subset(dataset, split == FALSE)
+```    
+
+**6. Fitting Simple Linear Regression to the Training set**
+```{r}
+regressor = lm(formula = Salary ~ YearsExperience,data = training_set)
+
+```     
+**View the regressor**
+```{r}
+summary(regressor)
+```    
+**Predicting the Test set results**    
+```{r}
+y_pred = predict(regressor, newdata = test_set)
+```    
+**7. Visualize the training set results**    
+```{r}
+library(ggplot2)
+ggplot() +
+        geom_point(aes(x = training_set$YearsExperience,
+                       y = training_set$Salary),
+                   colour = 'red') +
+        geom_line(aes(x = training_set$YearsExperience,
+                      y = predict(regressor, newdata = training_set)),
+                  colour = 'blue') +
+        ggtitle('Salary vs Experience (Training Set)') +
+        xlab('Years of Experience') +
+        ylab('Salary')
+```    
+**8. Visualize the test set results**    
+```{r}
+library(ggplot2)
+ggplot() +
+        geom_point(aes(x = test_set$YearsExperience,
+                       y = test_set$Salary),
+                   colour = 'red') +
+        geom_line(aes(x = training_set$YearsExperience,
+                      y = predict(regressor, newdata = training_set)),
+                  colour = 'blue') +
+        ggtitle('Salary vs Experience (Test Set)') +
+        xlab('Years of Experience') +
+        ylab('Salary')
+```        
+        
+```    
