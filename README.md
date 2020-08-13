@@ -7,7 +7,9 @@
                               employee's previous company and predict whether the potential employee earned 150k salary as a regional
                               manager. This project has following files:        
                               - Position_Salaries.csv : dataset of poosition and salaries of employees of a company    
-                              - Support_Vector_Regression.ipynb : Python script for analysis.
+                              - Support_Vector_Regression.ipynb : Python script for analysis.    
+                              - Support_Vector_Regression.pdf : Rmd knitted pdf output.   
+                              - Support_Vector_Regression.Rmd : Rmd script.   
 
 2. Data_pre_processing: This project sets up the data pre-processing template for any Machine Learning model. This project involves the 
                          following files:    
