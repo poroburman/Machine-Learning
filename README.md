@@ -5,7 +5,7 @@
 1. Support_Vector_Regression: this project is meant to verify the salary of a potential employee in his/ her previous company. We
                               will use support vector regression model to learn from the position salary dataset of the potential
                               employee's previous company and predict whether the potential employee earned 150k salary as a regional
-                              manager. This project has following files:    
+                              manager. This project has following files:        
                               - Position_Salaries.csv : dataset of poosition and salaries of employees of a company    
                               - Support_Vector_Regression.ipynb : Python script for analysis.
 
