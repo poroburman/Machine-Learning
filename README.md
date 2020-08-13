@@ -2,6 +2,15 @@
 
 **This repository stores all the diiferent regression models which I have practiced in Python and R**.    
 
+1. Random_Forst_Regression: this project is meant to verify the salary of a potential employee in his/ her previous company. We
+                            will use support vector regression model to learn from the position salary dataset of the potential
+                            employee's previous company and predict whether the potential employee earned 150k salary as a regional
+                            manager. This project has following files:    
+                              - Position_Salaries.csv : dataset of position and salaries of employees of a company.   
+                              - Random_Forest_Regression.ipynb : Python script for analysis.   
+                              - Random_Forest_Regression.pdf : Rmd knitted pdf output.   
+                              - Random_Forest_regression.Rmd : Rmd script.
+
 1. Decision_Tree_Regression: this project is meant to verify the salary of a potential employee in his/ her previous company. We
                               will use support vector regression model to learn from the position salary dataset of the potential
                               employee's previous company and predict whether the potential employee earned 150k salary as a regional
