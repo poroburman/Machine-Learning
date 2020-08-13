@@ -1,0 +1,56 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+**This script is meant to verify the salary of a potential employee in his/ her**
+**previous company. We will use support vector regression model to learn from the**
+**position salary dataset of the potential employee's previous company and predict**
+**whether the potential employee earned 150k salary as a regional manager**    
+
+**# 1. import the libraries, dataset and change the working directory**
+```{r}
+library(caTools)
+library(e1071)
+
+dataset = read.csv('Position_Salaries.csv')
+dataset = dataset[2:3]
+```    
+
+**2. data pre-processing**
+
+**view the dataset**
+```{r}
+head(dataset)
+```    
+
+**we arent splitting the dataset into training and testing set because we want the**
+**model we create to learn from all the data and to find any (if any) correlation**
+**between the 'Position' and the 'Salary' we apply the feature scaling in this**
+**dataset to the dependent variable ('Salary'); because the values of the dependent**
+**variable ('Salary') is way greater than the independent variable ('Position').**
+**This can result in the 'Salary' variable affecting the model and hence 'Position'** 
+**variable might get neglected**    
+
+**3. Training the SVR model on the entire dataset**    
+```{r}
+regressor = svm(formula = Salary ~ .,
+                data = dataset,
+                type = 'eps-regression',
+                kernel = 'radial')
+```    
+**4. predicting a new result**    
+```{r}
+y_pred = predict(regressor, data.frame(Level = 6.5))
+```    
+
+**5. visualizing the SVR results**    
+```{r}
+library(ggplot2)
+ggplot() + 
+        geom_point(aes(x = dataset$Level, y = dataset$Salary), colour = 'red') + 
+        geom_line(aes(x = dataset$Level, y = predict(regressor, newdata = dataset)), 
+                  colour = 'blue') + 
+        ggtitle('Support Vector Regression') + 
+        xlab('Level') + ylab('Salary')
+```    
