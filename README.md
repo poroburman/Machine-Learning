@@ -6,7 +6,7 @@
                               will use support vector regression model to learn from the position salary dataset of the potential
                               employee's previous company and predict whether the potential employee earned 150k salary as a regional
                               manager. This project has following files:    
-                              - Position_Salaries.csv : dataset of poosition and salaries of employees of a company
+                                  - Position_Salaries.csv : dataset of poosition and salaries of employees of a company
                               - Support_Vector_Regression.ipynb : Python script for analysis.
 
 2. Data_pre_processing: This project sets up the data pre-processing template for any Machine Learning model. This project involves the 
