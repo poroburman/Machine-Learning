@@ -2,7 +2,7 @@
 
 **This repository stores all the diiferent regression models which I have practiced in Python and R**.    
 
-1. Multiple_Linear_Regression: the dataset consists the profit statement for 50 companies and various additional variables associated with.   
+1. Multiple_Linear_Regression: the dataset consists the profit statement for 50 companies and various additional variables associated with 
                                 those companies. This script is meant to develop a model where we can predict as to which
                                 particular variable(s) contribute most towards the profit of those companies and which company is most profitable.   
                                 This project has following files:
