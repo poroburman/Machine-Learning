@@ -2,10 +2,19 @@
 
 **This repository stores all the diiferent regression models which I have practiced in Python and R**.    
 
-1. Random_Forst_Regression: this project is meant to verify the salary of a potential employee in his/ her previous company. We
-                            will use random forest regression model to learn from the position salary dataset of the potential
-                            employee's previous company and predict whether the potential employee earned 150k salary as a regional
-                            manager. This project has following files:    
+1. Multiple_Linear_Regression: the dataset consists the profit statement for 50 companies and various additional variables associated with.   
+                                those companies. This script is meant to develop a model where we can predict as to which
+                                particular variable(s) contribute most towards the profit of those companies and which company is most profitable.   
+                                This project has following files:
+                                - 50_Startups.csv : dataset of thr profit statement of 50 companies.   
+                                - Multiple_Linear_Regression.ipynb : Python script for analysis.   
+                                - Multiple_Linear_Regression.pdf : Rmd knitted pdf file.   
+                                - Multiple_Linear_Regression.Rmd : Rmd script.   
+
+1. Random_Forest_Regression: this project is meant to verify the salary of a potential employee in his/ her previous company. We
+                              will use random forest regression model to learn from the position salary dataset of the potential
+                              employee's previous company and predict whether the potential employee earned 150k salary as a regional
+                              manager. This project has following files:    
                               - Position_Salaries.csv : dataset of position and salaries of employees of a company.   
                               - Random_Forest_Regression.ipynb : Python script for analysis.   
                               - Random_Forest_Regression.pdf : Rmd knitted pdf output.   
