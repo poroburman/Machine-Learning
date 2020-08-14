@@ -1,0 +1,54 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+**this script is meant to verify the salary of a potential employee in his/ her**    **previous company. We will use support vector regression model to learn from the**     **position salary dataset of the potential employee's previous company and predict**     **whether the potential employee earned 160k salary as a regional manager**    
+
+**1. Import the dataset**    
+```{r}
+dataset = read.csv('Position_Salaries.csv')
+dataset = dataset[2:3]
+```
+
+**2. Fit Polynomial Linear Regression to the dataset**    
+```{r}
+dataset$Level2 = dataset$Level^2
+dataset$Level3 = dataset$Level^3
+dataset$Level4 = dataset$Level^4
+poly_reg = lm(formula = Salary ~ .,
+              data = dataset)
+```    
+
+**3. Visualize**    
+```{r}
+library(ggplot2)
+
+x_grid = seq(min(dataset$Level), max(dataset$Level), 0.1)
+
+ggplot() + 
+        geom_point(aes(x = dataset$Level, y = dataset$Salary), colour = 'red') + 
+        geom_line(aes(x = x_grid, 
+                      y = predict(poly_reg,
+                                        newdata = data.frame(Level = x_grid,
+                                                             Level2 = x_grid^2,
+                                                             Level3 = x_grid^3,
+                                                             Level4 = x_grid^4))),
+                  colour = 'blue') + 
+        ggtitle('Truth or Bluff (Polynomial Regression)') + 
+        xlab('Level') + ylab('Salary')
+```    
+
+**4. Predict the result**    
+```{r}
+predict(poly_reg, data.frame(Level = 6.5,
+                             Level2 = 6.5^2,
+                             Level3 = 6.5^3,
+                             Level4 = 6.5^4))
+```    
+
+**5. Result**    
+
+**As one can see, this model predict the salary for the position to be 158k, whereas the actual salary is 160k**    
+
+
