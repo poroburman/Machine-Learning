@@ -1,0 +1,48 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+**The dataset consists the profit statement for 50 companies and various additional**    
+**variables associated with those companies. This script is meant to develop a model**    
+**where we can predict as to which particular variable(s) contribute most towards**    
+**the profit of those companies and which company is most profitable**    
+
+**1. Import the dataset**    
+```{r}
+dataset = read.csv('50_Startups.csv')
+```    
+
+**2. Encode categorical data**    
+```{r}
+dataset$State = factor(dataset$State,
+                       levels = c('New York', 'California', 'Florida'),
+                       labels = c(1, 2, 3))
+```    
+
+**3. Split the dataset into training and test set**    
+```{r}
+library(caTools)
+set.seed(123)
+split = sample.split(dataset$Profit, SplitRatio = 0.8)
+training_set = subset(dataset, split == TRUE)
+test_set = subset(dataset, split == FALSE)
+```    
+
+**4. Fitting Multiple Linear Regression to the Training set**    
+```{r}
+regressor = lm(formula = Profit ~ .,
+               data = training_set)
+```    
+
+**5. Predict the test set results**    
+```{r}
+y_pred = predict(regressor, newdata = test_set)
+y_pred
+test_set
+```    
+
+**6. Result**    
+
+**As one can see, y_pred represents the model's predicted profiit values for the**    
+**test set. The values are close to the test set.**    
