@@ -1,6 +1,6 @@
 # Regression-Models
 
-**This repository stores all the diiferent regression models which I have practiced in Python and R**.    
+**This repository stores all the different regression models which I have practiced in Python and R**.    
 
 1. Multiple_Linear_Regression: the dataset consists the profit statement for 50 companies and various additional variables associated with 
                                 those companies. This script is meant to develop a model where we can predict as to which
