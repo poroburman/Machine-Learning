@@ -1,4 +1,4 @@
-# Machine Learning
+# Regression
 
 **This repository stores all the different regression models which I have practiced in Python and R**.    
 
