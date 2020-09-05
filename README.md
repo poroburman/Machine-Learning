@@ -2,6 +2,10 @@
 
 **This repository stores all the different regression models which I have practiced in Python and R**.    
 
+ANN Regression : This script uses ANN Regression model to predict the energy output of Power Plant.. The following files are part of this project:    
+                      - ANN-Regression.ipynb.   
+                      - Folds5x2_pp.xlsx.   
+
 1. Polynomial_Linear_regression: this project is meant to verify the salary of a potential employee in his/ her previous company. We
                                   will use polynomial linear regression model to learn from the position salary dataset of the potential
                                   employee's previous company and predict whether the potential employee earned 150k salary as a regional
