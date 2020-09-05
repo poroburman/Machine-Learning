@@ -2,7 +2,7 @@
 
 **This repository stores all the different regression models which I have practiced in Python and R**.    
 
-ANN Regression : This script uses ANN Regression model to predict the energy output of Power Plant.. The following files are part of this project:    
+1. ANN Regression : This script uses ANN Regression model to predict the energy output of Power Plant.. The following files are part of this project:    
                       - ANN-Regression.ipynb.   
                       - Folds5x2_pp.xlsx.   
 
